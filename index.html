@@ -12,14 +12,35 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
     <script>
       const createElement = React.createElement;
+      const { useState, useEffect } = React;
+
+      function Button() {
+        return createElement(
+          "button",
+          {
+            onClick: () => alert("button click!"),
+          },
+          "click me"
+        );
+      }
 
       function App() {
+        const [name, setName] = useState("shuibuzhuo");
+        const [init, setInit] = useState(true);
+
+        useEffect(() => {
+          if (!init) {
+            setName("hamo");
+          }
+        }, [init]);
+
         return createElement(
           "div",
           {
-            onClick: () => alert("hello"),
+            onClick: () => setInit(false),
           },
-          "hello react"
+          "hello " + name,
+          createElement(Button)
         );
       }
 
