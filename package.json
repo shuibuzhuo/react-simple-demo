@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "typescript": "babel --watch src/ts --out-dir lib --extensions .ts --config-file ./babel.config.js"
+    "typescript": "babel --watch src/ts --out-dir lib --extensions .ts",
+    "preset-env": "babel --watch src/es --out-dir lib",
+    "react": "babel --watch src/react --out-dir lib",
+    "tsx": "babel --watch src/react --out-dir lib --extensions .tsx"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,8 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3"
   }
 }

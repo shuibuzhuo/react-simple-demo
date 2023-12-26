@@ -1,4 +1,8 @@
-const presets = [["@babel/preset-typescript", { optimizeConstEnums: true }]];
+const presets = [
+  ["@babel/preset-env", { modules: "commonjs" }],
+  ["@babel/preset-react"],
+  ["@babel/preset-typescript"],
+];
 
 module.exports = {
   presets,
